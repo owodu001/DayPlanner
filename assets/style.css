@@ -8,15 +8,17 @@
     height: 50px;
 }
 
-.grey {
+
+/* .grey {
     background-color: grey;
     height: 50px;
-}
+} */
 
-.green {
+
+/* .green {
     background-color: green;
     height: 50px;
-}
+} */
 
 .partition {
     border-bottom: solid 2px lightgrey;
@@ -30,7 +32,8 @@
 
 /* imported CSS */
 
-body {
+
+/* body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 1;
@@ -67,7 +70,7 @@ textarea {
     height: 80px;
     border-top: 1px solid white;
     ;
-}
+/* } */
 
 .hour {
     background-color: #ffffff;
@@ -76,8 +79,7 @@ textarea {
 }
 
 .past {
-    background-color: #d3d3d3;
-    color: white;
+    background-color: grey
 }
 
 .present {
@@ -90,7 +92,8 @@ textarea {
     color: white;
 }
 
-.saveBtn {
+
+/* .saveBtn {
     border-left: 1px solid black;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -101,4 +104,4 @@ textarea {
 .saveBtn i:hover {
     font-size: 20px;
     transition: all .3s ease-in-out;
-}
+}  */
