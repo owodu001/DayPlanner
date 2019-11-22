@@ -23,27 +23,28 @@ let currentDay = moment().format('L');
 currentDate.innerHTML = date;
 
 let time = [
-    { string: "9am", input: document.getElementById("nine"), value: 9 },
-    { string: "10am", input: document.getElementById("ten"), value: 10 },
-    { string: "11am", input: document.getElementById("eleven"), value: 11 },
-    { string: "12pm", input: document.getElementById("twelve"), value: 12 },
-    { string: "1pm", input: document.getElementById("one"), value: 13 },
-    { string: "2pm", input: document.getElementById("two"), value: 14 },
-    { string: "3pm", input: document.getElementById("three"), value: 15 },
-    { string: "4pm", input: document.getElementById("four"), value: 16 },
-    { string: "5pm", input: document.getElementById("five"), value: 17 }
+    { string: "9am", input: document.querySelector("#nine"), value: 9 },
+    { string: "10am", input: document.querySelector("#ten"), value: 10 },
+    { string: "11am", input: document.querySelector("#eleven"), value: 11 },
+    { string: "12pm", input: document.querySelector("#twelve"), value: 12 },
+    { string: "1pm", input: document.querySelector("#one"), value: 13 },
+    { string: "2pm", input: document.querySelector("#two"), value: 14 },
+    { string: "3pm", input: document.querySelector("#three"), value: 15 },
+    { string: "4pm", input: document.querySelector("#four"), value: 16 },
+    { string: "5pm", input: document.querySelector("#five"), value: 17 }
 ]
 
 console.log(new Date().getHours())
-let i = 0
-    // let time[i].input = colorChange
+console.log(time[0].input)
+
+
 
 for (let i = 0; i < time.length; i++) {
     console.log(currentTime)
     if (time[i].value < currentTime) {
         time[i].input.setAttribute("class", "form-control past");
     }
-    if (time[i].value = currentTime) {
+    if (time[i].value === currentTime) {
         time[i].input.setAttribute("class", "form-control present")
     }
     if (time[i].value > currentTime) {
