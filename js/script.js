@@ -7,7 +7,6 @@
 // startPlanning()
 
 
-
 const currentDate = document.getElementById("current-date");
 
 const hourBlocks = document.querySelectorAll(".hour");
@@ -57,29 +56,33 @@ const array = [];
 
 for (let i = 0; i < saveButtonEls.length; i++) {
     array.push({ "hour": hourBox[i].innerHTML, "input": inputBoxes[i], "buttons": saveButtonEls[i] });
+    console.log(array)
 }
+
+
+
 
 for (let i = 0; i < array.length; i++) {
     array[i].buttons.addEventListener("click", function() {
-
         const dataStr = localStorage.getItem("calendarUpdates") || "[]";
         const eventData = JSON.parse(dataStr);
-        eventData.push({ date: currentDay, time: array[i].hour, content: array[i].hourBox.value });
+        eventData.push({ "date": currentDay, "time": array[i].hour, "content": array[i].input.value });
+        console.log(eventData);
         localStorage.setItem("calendarUpdates", JSON.stringify(eventData));
+        console.log("calendar-updates")
     });
 }
 
-const dataStr = localStorage.getItem('calendarUpdates') || "[]";
-const data = JSON.parse(dataStr);
+const dataStr = localStorage.getItem("calendarUpdates") || "[]";
+const eventData = JSON.parse(dataStr);
 
 for (let i = 0; i < hourBox.length; i++) {
-    for (m = 0; m < data.length; m++) {
-        if (data[m].time === hourBox[i].innerHTML && data[m].date === currentDay) {
-            inputBoxes[i].value = data[m].content;
+    for (m = 0; m < eventData.length; m++) {
+        if (eventData[m].time === hourBox[i].innerHTML && eventData[m].date === currentDay) {
+            inputBoxes[i].value = eventData[m].content;
         }
     }
 }
-
 
 // saveButtonEls.forEach(function(saveButtons) {
 //     saveButtons.addEventListener("click", function() {
